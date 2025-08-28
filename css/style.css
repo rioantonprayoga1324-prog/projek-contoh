@@ -1,0 +1,83 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: #0d1b2a;
+  color: white;
+}
+.navbar .logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+.navbar .nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Section umum */
+section {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+/* Banner */
+.banner img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+/* Form */
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: auto;
+}
+.contact input, .contact textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+.contact button {
+  padding: 12px;
+  border: none;
+  background: #0d6efd;
+  color: white;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.contact button:hover {
+  background: #0a58ca;
+}
+
+/* Footer */
+footer {
+  background: #0d1b2a;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .navbar .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
