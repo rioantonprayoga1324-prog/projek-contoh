@@ -1,59 +1,211 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SpaceNet WiFi</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="logo">SpaceNet</div>
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#profile">Our Profile</a></li>
-      <li><a href="#contact">Message Us</a></li>
-    </ul>
-  </nav>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>OceanNet — Paket WiFi Elegan</title>
+    <meta name="description" content="Paket internet rumah dengan tampilan elegan biru laut. Daftar cepat via WhatsApp." />
 
-  <!-- Home -->
-  <section id="home" class="home">
-    <h1 id="welcome-text">Hi Guest</h1>
-    <p>Selamat datang di SpaceNet WiFi — Internet Cepat & Stabil</p>
-  </section>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Our Profile -->
-  <section id="profile" class="profile">
-    <div class="banner">
-      <img src="https://via.placeholder.com/1200x400" alt="Banner Perusahaan">
-    </div>
-    <div class="about">
-      <h2>Tentang Perusahaan</h2>
-      <p>SpaceNet WiFi adalah penyedia layanan internet yang berfokus pada koneksi cepat, stabil, dan terjangkau untuk rumah maupun bisnis.</p>
-    </div>
-    <div class="vision-mission">
-      <h2>Visi & Misi</h2>
-      <p><strong>Visi:</strong> Menjadi penyedia internet terdepan di Indonesia.</p>
-      <p><strong>Misi:</strong> Memberikan layanan internet berkualitas dengan harga yang terjangkau serta dukungan pelanggan 24/7.</p>
-    </div>
-  </section>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="background-ornaments" aria-hidden="true"></div>
 
-  <!-- Message Us -->
-  <section id="contact" class="contact">
-    <h2>Message Us</h2>
-    <form id="contactForm">
-      <input type="text" id="name" placeholder="Nama Anda" required>
-      <input type="email" id="email" placeholder="Email Anda" required>
-      <textarea id="message" placeholder="Pesan Anda" required></textarea>
-      <button type="submit">Kirim</button>
-    </form>
-  </section>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">🌊</span>
+          <span class="brand-name">OceanNet</span>
+        </div>
+        <nav class="nav">
+          <a href="#paket" class="nav-link">Paket</a>
+          <a href="#daftar" class="nav-link">Daftar</a>
+          <a href="#kontak" class="nav-link">Kontak</a>
+        </nav>
+      </div>
+    </header>
 
-  <footer>
-    <p>© 2025 SpaceNet WiFi</p>
-  </footer>
+    <main>
+      <section class="hero section">
+        <div class="container hero-inner">
+          <div class="hero-copy reveal">
+            <h1 class="hero-title">Internet Cepat, Stabil, dan Elegan</h1>
+            <p class="hero-subtitle">
+              Nikmati pengalaman online tanpa hambatan dengan warna biru laut yang menenangkan.
+              Pilih paket sesuai kebutuhan dan daftar hanya dengan sekali klik via WhatsApp.
+            </p>
+            <div class="hero-cta">
+              <a href="#paket" class="btn btn-primary btn-lg ripple scroll-link" data-target="#paket">Lihat Paket</a>
+              <a href="#daftar" class="btn btn-outline btn-lg ripple scroll-link" data-target="#daftar">Daftar Sekarang</a>
+            </div>
+          </div>
+          <div class="hero-art reveal" aria-hidden="true">
+            <div class="wave"></div>
+            <div class="wave delay"></div>
+            <div class="wave slow"></div>
+          </div>
+        </div>
+      </section>
 
-  <script src="js/script.js"></script>
-</body>
+      <section id="paket" class="section">
+        <div class="container">
+          <header class="section-header reveal">
+            <h2 class="section-title">Paket Berlangganan</h2>
+            <p class="section-subtitle">Pilih paket terbaik untuk kebutuhan internet Anda</p>
+          </header>
+
+          <div class="card-grid">
+            <article class="card reveal">
+              <div class="card-header">
+                <h3 class="card-title">Basic</h3>
+                <p class="card-price"><span>Rp</span>199.000<span>/bln</span></p>
+              </div>
+              <ul class="card-features">
+                <li>Kecepatan hingga 20 Mbps</li>
+                <li>Ideal untuk 1–3 perangkat</li>
+                <li>Streaming HD</li>
+                <li>Dukungan chat 7x12</li>
+              </ul>
+              <div class="card-actions">
+                <button class="btn btn-primary ripple choose-package" data-package="Basic" data-speed="20 Mbps" data-price="199.000">Pilih Paket</button>
+              </div>
+            </article>
+
+            <article class="card featured reveal">
+              <div class="badge">Favorit</div>
+              <div class="card-header">
+                <h3 class="card-title">Standard</h3>
+                <p class="card-price"><span>Rp</span>249.000<span>/bln</span></p>
+              </div>
+              <ul class="card-features">
+                <li>Kecepatan hingga 30 Mbps</li>
+                <li>Ideal untuk 3–5 perangkat</li>
+                <li>Streaming Full HD</li>
+                <li>Dukungan chat 7x12</li>
+              </ul>
+              <div class="card-actions">
+                <button class="btn btn-primary ripple choose-package" data-package="Standard" data-speed="30 Mbps" data-price="249.000">Pilih Paket</button>
+              </div>
+            </article>
+
+            <article class="card reveal">
+              <div class="card-header">
+                <h3 class="card-title">Premium</h3>
+                <p class="card-price"><span>Rp</span>349.000<span>/bln</span></p>
+              </div>
+              <ul class="card-features">
+                <li>Kecepatan hingga 50 Mbps</li>
+                <li>Ideal untuk 5–8 perangkat</li>
+                <li>Streaming 4K</li>
+                <li>Dukungan chat 7x12</li>
+              </ul>
+              <div class="card-actions">
+                <button class="btn btn-primary ripple choose-package" data-package="Premium" data-speed="50 Mbps" data-price="349.000">Pilih Paket</button>
+              </div>
+            </article>
+
+            <article class="card reveal">
+              <div class="card-header">
+                <h3 class="card-title">Ultimate</h3>
+                <p class="card-price"><span>Rp</span>499.000<span>/bln</span></p>
+              </div>
+              <ul class="card-features">
+                <li>Kecepatan hingga 100 Mbps</li>
+                <li>Ideal untuk >8 perangkat</li>
+                <li>Streaming 4K Multi-device</li>
+                <li>Dukungan chat 7x12</li>
+              </ul>
+              <div class="card-actions">
+                <button class="btn btn-primary ripple choose-package" data-package="Ultimate" data-speed="100 Mbps" data-price="499.000">Pilih Paket</button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="daftar" class="section section-muted">
+        <div class="container">
+          <header class="section-header reveal">
+            <h2 class="section-title">Form Pemasangan</h2>
+            <p class="section-subtitle">Isi data Anda dan kirim ke WhatsApp admin</p>
+          </header>
+
+          <form id="install-form" class="form reveal" autocomplete="on">
+            <div class="form-row">
+              <div class="form-field">
+                <label for="nama">Nama Lengkap</label>
+                <input type="text" id="nama" name="nama" placeholder="Nama Anda" required />
+              </div>
+              <div class="form-field">
+                <label for="wa">Nomor WhatsApp</label>
+                <input type="tel" id="wa" name="wa" placeholder="628xxxxxxxxxx" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field full">
+                <label for="alamat">Alamat Lengkap</label>
+                <textarea id="alamat" name="alamat" rows="3" placeholder="Jalan, RT/RW, Kel/Desa, Kec, Kota, Provinsi" required></textarea>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="paket">Paket Pilihan</label>
+                <select id="paket" name="paket" required>
+                  <option value="" disabled selected>Pilih paket</option>
+                  <option value="Basic">Basic — 20 Mbps (Rp199.000)</option>
+                  <option value="Standard">Standard — 30 Mbps (Rp249.000)</option>
+                  <option value="Premium">Premium — 50 Mbps (Rp349.000)</option>
+                  <option value="Ultimate">Ultimate — 100 Mbps (Rp499.000)</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="tanggal">Tanggal Pemasangan</label>
+                <input type="date" id="tanggal" name="tanggal" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field full">
+                <label for="catatan">Catatan Tambahan (Opsional)</label>
+                <textarea id="catatan" name="catatan" rows="3" placeholder="Patokan lokasi, waktu preferensi, dll"></textarea>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary btn-xl ripple">Kirim ke WhatsApp</button>
+              <p class="form-hint">Dengan menekan tombol, Anda akan diarahkan ke WhatsApp untuk mengirim data ke admin.</p>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer id="kontak" class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <span class="brand-mark" aria-hidden="true">🌊</span>
+          <span>OceanNet</span>
+        </div>
+        <div class="footer-links">
+          <a class="footer-link" href="#paket">Paket</a>
+          <a class="footer-link" href="#daftar">Daftar</a>
+        </div>
+        <p class="copyright">© <span id="year"></span> OceanNet. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <a href="#" class="floating-wa ripple" id="floating-wa" aria-label="Chat WhatsApp">
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M20.52 3.48A11.66 11.66 0 0 0 12.01 0C5.38 0 0 5.38 0 12.01c0 2.12.55 4.09 1.54 5.81L0 24l6.37-1.66a11.95 11.95 0 0 0 5.64 1.43h.01c6.63 0 12.01-5.38 12.01-12.01 0-3.21-1.25-6.23-3.51-8.57zM12.02 21.3h-.01a9.29 9.29 0 0 1-4.74-1.3l-.34-.2-3.78 1 1.01-3.68-.22-.38a9.26 9.26 0 0 1-1.4-4.83c0-5.13 4.17-9.3 9.31-9.3a9.28 9.28 0 0 1 9.3 9.31c0 5.13-4.17 9.3-9.31 9.3zm5.14-7.1c-.28-.14-1.64-.81-1.89-.9-.25-.09-.43-.14-.62.14-.19.28-.71.9-.87 1.09-.16.19-.32.21-.6.07-.28-.14-1.18-.43-2.25-1.38-.83-.74-1.39-1.65-1.56-1.93-.16-.28-.02-.43.12-.57.12-.12.28-.32.42-.49.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.49-.07-.14-.62-1.5-.85-2.05-.22-.53-.45-.46-.62-.47l-.53-.01c-.19 0-.49.07-.75.35-.26.28-1 1-1 2.43 0 1.43 1.03 2.82 1.18 3.01.14.19 2.03 3.1 4.94 4.35.69.3 1.22.48 1.64.61.69.22 1.32.19 1.82.12.56-.08 1.64-.67 1.87-1.32.23-.65.23-1.21.16-1.32-.06-.12-.25-.19-.53-.33z" fill="currentColor" stroke="none"/>
+      </svg>
+    </a>
+
+    <script src="script.js"></script>
+  </body>
 </html>
