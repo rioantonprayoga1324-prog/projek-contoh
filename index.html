@@ -3,50 +3,135 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SpaceNet WiFi</title>
+  <title>SpaceNet WiFi — Internet Cepat & Stabil</title>
   <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="Paket internet biru laut yang elegan dengan formulir pemasangan langsung terhubung ke WhatsApp.">
+  <link rel="icon" href="logo_perusahaan2-removebg-preview.png">
+  
+  <!-- Preload local logo for faster first paint -->
+  <link rel="preload" as="image" href="logo_perusahaan2-removebg-preview.png">
 </head>
 <body>
   <!-- Navbar -->
   <nav class="navbar">
-    <div class="logo">SpaceNet</div>
+    <div class="brand">
+      <img src="logo_perusahaan2-removebg-preview.png" alt="Logo SpaceNet">
+      <span>SpaceNet</span>
+    </div>
     <ul class="nav-links">
       <li><a href="#home">Home</a></li>
-      <li><a href="#profile">Our Profile</a></li>
-      <li><a href="#contact">Message Us</a></li>
+      <li><a href="#paket">Paket</a></li>
+      <li><a href="#pemasangan">Pemasangan</a></li>
     </ul>
   </nav>
 
-  <!-- Home -->
-  <section id="home" class="home">
-    <h1 id="welcome-text">Hi Guest</h1>
-    <p>Selamat datang di SpaceNet WiFi — Internet Cepat & Stabil</p>
-  </section>
-
-  <!-- Our Profile -->
-  <section id="profile" class="profile">
-    <div class="banner">
-      <img src="https://via.placeholder.com/1200x400" alt="Banner Perusahaan">
-    </div>
-    <div class="about">
-      <h2>Tentang Perusahaan</h2>
-      <p>SpaceNet WiFi adalah penyedia layanan internet yang berfokus pada koneksi cepat, stabil, dan terjangkau untuk rumah maupun bisnis.</p>
-    </div>
-    <div class="vision-mission">
-      <h2>Visi & Misi</h2>
-      <p><strong>Visi:</strong> Menjadi penyedia internet terdepan di Indonesia.</p>
-      <p><strong>Misi:</strong> Memberikan layanan internet berkualitas dengan harga yang terjangkau serta dukungan pelanggan 24/7.</p>
+  <!-- Hero -->
+  <section id="home" class="hero reveal">
+    <div class="hero-content">
+      <h1>Internet Biru Laut — Cepat, Stabil, Elegan</h1>
+      <p>Solusi koneksi andal untuk rumah dan bisnis Anda.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#paket">Lihat Paket</a>
+        <a class="btn btn-ghost" href="#pemasangan">Pasang Sekarang</a>
+      </div>
     </div>
   </section>
 
-  <!-- Message Us -->
-  <section id="contact" class="contact">
-    <h2>Message Us</h2>
-    <form id="contactForm">
-      <input type="text" id="name" placeholder="Nama Anda" required>
-      <input type="email" id="email" placeholder="Email Anda" required>
-      <textarea id="message" placeholder="Pesan Anda" required></textarea>
-      <button type="submit">Kirim</button>
+  <!-- Paket -->
+  <section id="paket" class="section packages reveal">
+    <h2>Paket Berlangganan WiFi</h2>
+    <p class="subtitle">Pilih paket sesuai kebutuhan internet Anda</p>
+
+    <div class="grid">
+      <article class="card">
+        <header>
+          <h3>Basic</h3>
+          <p class="speed">Up to 20 Mbps</p>
+        </header>
+        <ul class="features">
+          <li>Unlimited kuota</li>
+          <li>Router standar</li>
+          <li>Dukungan pelanggan 24/7</li>
+        </ul>
+        <div class="price">Rp 199.000/bulan</div>
+        <button class="btn select-package" data-package="Basic 20 Mbps">Pilih Paket</button>
+      </article>
+
+      <article class="card highlight">
+        <header>
+          <h3>Family</h3>
+          <p class="speed">Up to 50 Mbps</p>
+        </header>
+        <ul class="features">
+          <li>Unlimited kuota</li>
+          <li>Router dual-band</li>
+          <li>Prioritas antrian layanan</li>
+        </ul>
+        <div class="price">Rp 299.000/bulan</div>
+        <button class="btn select-package" data-package="Family 50 Mbps">Pilih Paket</button>
+      </article>
+
+      <article class="card">
+        <header>
+          <h3>Pro</h3>
+          <p class="speed">Up to 100 Mbps</p>
+        </header>
+        <ul class="features">
+          <li>Unlimited kuota</li>
+          <li>Router high-performance</li>
+          <li>Service level agreement (SLA)</li>
+        </ul>
+        <div class="price">Rp 399.000/bulan</div>
+        <button class="btn select-package" data-package="Pro 100 Mbps">Pilih Paket</button>
+      </article>
+    </div>
+  </section>
+
+  <!-- Form Pemasangan -->
+  <section id="pemasangan" class="section install reveal">
+    <h2>Form Pemasangan WiFi</h2>
+    <p class="subtitle">Isi data Anda, kami hubungi lewat WhatsApp</p>
+
+    <form id="installForm" class="form">
+      <div class="form-grid">
+        <div class="field">
+          <label for="fullName">Nama Lengkap</label>
+          <input type="text" id="fullName" placeholder="Nama lengkap" required>
+        </div>
+
+        <div class="field">
+          <label for="phone">No. WhatsApp</label>
+          <input type="tel" id="phone" placeholder="Contoh: 081234567890" required>
+        </div>
+
+        <div class="field full">
+          <label for="address">Alamat Lengkap</label>
+          <textarea id="address" rows="3" placeholder="Jalan, RT/RW, Kelurahan, Kecamatan, Kota" required></textarea>
+        </div>
+
+        <div class="field">
+          <label for="package">Paket Pilihan</label>
+          <select id="package" required>
+            <option value="">— Pilih paket —</option>
+            <option value="Basic 20 Mbps">Basic 20 Mbps</option>
+            <option value="Family 50 Mbps">Family 50 Mbps</option>
+            <option value="Pro 100 Mbps">Pro 100 Mbps</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="schedule">Jadwal Preferensi</label>
+          <input type="date" id="schedule">
+        </div>
+
+        <div class="field full">
+          <label for="note">Catatan</label>
+          <textarea id="note" rows="2" placeholder="Detail tambahan (opsional)"></textarea>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Kirim ke WhatsApp</button>
+      <p class="form-hint">Dengan menekan tombol di atas, Anda akan diarahkan ke WhatsApp untuk mengirim detail pemasangan ke tim kami.</p>
     </form>
   </section>
 
