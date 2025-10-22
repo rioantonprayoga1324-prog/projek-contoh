@@ -21,6 +21,7 @@
     <ul class="nav-links">
       <li><a href="#home">Home</a></li>
       <li><a href="#paket">Paket</a></li>
+      <li><a href="#pembayaran">Pembayaran</a></li>
       <li><a href="#pemasangan">Pemasangan</a></li>
     </ul>
   </nav>
@@ -32,6 +33,7 @@
       <p>Solusi koneksi andal untuk rumah dan bisnis Anda.</p>
       <div class="actions">
         <a class="btn btn-primary" href="#paket">Lihat Paket</a>
+        <a class="btn btn-ghost" href="#pembayaran">Perpanjang Internet</a>
         <a class="btn btn-ghost" href="#pemasangan">Pasang Sekarang</a>
       </div>
     </div>
@@ -84,6 +86,274 @@
         <div class="price">Rp 399.000/bulan</div>
         <button class="btn select-package" data-package="Pro 100 Mbps">Pilih Paket</button>
       </article>
+    </div>
+  </section>
+
+  <!-- Pembayaran Perpanjangan -->
+  <section id="pembayaran" class="section payment reveal">
+    <h2>Perpanjang Langganan Internet</h2>
+    <p class="subtitle">Masukkan ID Pelanggan untuk memperpanjang masa aktif internet Anda</p>
+
+    <div class="payment-container">
+      <!-- Step 1: Input ID Pelanggan -->
+      <div class="payment-step active" id="step-customer">
+        <div class="step-header">
+          <div class="step-number">1</div>
+          <h3>Verifikasi Pelanggan</h3>
+        </div>
+        
+        <form id="customerForm" class="payment-form">
+          <div class="field">
+            <label for="customerId">ID Pelanggan</label>
+            <input type="text" id="customerId" placeholder="Contoh: SPN001234" required>
+            <small>ID Pelanggan dapat ditemukan pada tagihan atau kartu pelanggan Anda</small>
+          </div>
+          
+          <button type="submit" class="btn btn-primary">
+            <span class="btn-text">Verifikasi ID</span>
+            <div class="btn-loading" style="display: none;">
+              <div class="spinner"></div>
+              Memverifikasi...
+            </div>
+          </button>
+        </form>
+      </div>
+
+      <!-- Step 2: Informasi Pelanggan & Pilih Paket -->
+      <div class="payment-step" id="step-package">
+        <div class="step-header">
+          <div class="step-number">2</div>
+          <h3>Informasi & Pilih Paket</h3>
+        </div>
+
+        <div class="customer-info">
+          <div class="info-card">
+            <h4>Informasi Pelanggan</h4>
+            <div class="info-grid">
+              <div class="info-item">
+                <span class="label">Nama:</span>
+                <span class="value" id="customerName">-</span>
+              </div>
+              <div class="info-item">
+                <span class="label">ID Pelanggan:</span>
+                <span class="value" id="customerIdDisplay">-</span>
+              </div>
+              <div class="info-item">
+                <span class="label">Paket Saat Ini:</span>
+                <span class="value" id="currentPackage">-</span>
+              </div>
+              <div class="info-item">
+                <span class="label">Masa Aktif:</span>
+                <span class="value" id="activeUntil">-</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <form id="packageForm" class="payment-form">
+          <div class="field">
+            <label for="renewalPackage">Pilih Paket Perpanjangan</label>
+            <div class="package-options">
+              <label class="package-option">
+                <input type="radio" name="package" value="Basic" data-price="199000">
+                <div class="package-card">
+                  <h4>Basic 20 Mbps</h4>
+                  <div class="package-price">Rp 199.000</div>
+                  <div class="package-duration">1 Bulan</div>
+                </div>
+              </label>
+              
+              <label class="package-option">
+                <input type="radio" name="package" value="Family" data-price="299000">
+                <div class="package-card popular">
+                  <span class="popular-badge">Populer</span>
+                  <h4>Family 50 Mbps</h4>
+                  <div class="package-price">Rp 299.000</div>
+                  <div class="package-duration">1 Bulan</div>
+                </div>
+              </label>
+              
+              <label class="package-option">
+                <input type="radio" name="package" value="Pro" data-price="399000">
+                <div class="package-card">
+                  <h4>Pro 100 Mbps</h4>
+                  <div class="package-price">Rp 399.000</div>
+                  <div class="package-duration">1 Bulan</div>
+                </div>
+              </label>
+            </div>
+          </div>
+          
+          <button type="submit" class="btn btn-primary">Lanjut ke Pembayaran</button>
+        </form>
+      </div>
+
+      <!-- Step 3: Pilih Metode Pembayaran -->
+      <div class="payment-step" id="step-payment">
+        <div class="step-header">
+          <div class="step-number">3</div>
+          <h3>Metode Pembayaran</h3>
+        </div>
+
+        <div class="payment-summary">
+          <div class="summary-card">
+            <h4>Ringkasan Pembayaran</h4>
+            <div class="summary-item">
+              <span>Paket:</span>
+              <span id="selectedPackageName">-</span>
+            </div>
+            <div class="summary-item">
+              <span>Durasi:</span>
+              <span>1 Bulan</span>
+            </div>
+            <div class="summary-item total">
+              <span>Total:</span>
+              <span id="totalAmount">Rp 0</span>
+            </div>
+          </div>
+        </div>
+
+        <form id="paymentForm" class="payment-form">
+          <div class="field">
+            <label>Pilih Metode Pembayaran</label>
+            <div class="payment-methods">
+              <label class="payment-method">
+                <input type="radio" name="paymentMethod" value="bank_transfer">
+                <div class="method-card">
+                  <div class="method-icon">🏦</div>
+                  <div class="method-info">
+                    <h4>Transfer Bank</h4>
+                    <p>BCA, Mandiri, BRI, BNI</p>
+                  </div>
+                </div>
+              </label>
+              
+              <label class="payment-method">
+                <input type="radio" name="paymentMethod" value="ovo">
+                <div class="method-card">
+                  <div class="method-icon">💜</div>
+                  <div class="method-info">
+                    <h4>OVO</h4>
+                    <p>Bayar dengan OVO</p>
+                  </div>
+                </div>
+              </label>
+              
+              <label class="payment-method">
+                <input type="radio" name="paymentMethod" value="gopay">
+                <div class="method-card">
+                  <div class="method-icon">💚</div>
+                  <div class="method-info">
+                    <h4>GoPay</h4>
+                    <p>Bayar dengan GoPay</p>
+                  </div>
+                </div>
+              </label>
+              
+              <label class="payment-method">
+                <input type="radio" name="paymentMethod" value="shopeepay">
+                <div class="method-card">
+                  <div class="method-icon">🧡</div>
+                  <div class="method-info">
+                    <h4>ShopeePay</h4>
+                    <p>Bayar dengan ShopeePay</p>
+                  </div>
+                </div>
+              </label>
+            </div>
+          </div>
+          
+          <button type="submit" class="btn btn-primary">Bayar Sekarang</button>
+        </form>
+      </div>
+
+      <!-- Step 4: Detail Pembayaran -->
+      <div class="payment-step" id="step-details">
+        <div class="step-header">
+          <div class="step-number">4</div>
+          <h3>Detail Pembayaran</h3>
+        </div>
+
+        <div class="payment-details">
+          <div class="payment-info-card">
+            <div class="payment-header">
+              <h4>Informasi Pembayaran</h4>
+              <div class="payment-status pending">
+                <div class="status-dot"></div>
+                Menunggu Pembayaran
+              </div>
+            </div>
+            
+            <div class="payment-info" id="paymentInfo">
+              <!-- Payment details will be populated by JavaScript -->
+            </div>
+            
+            <div class="payment-timer">
+              <div class="timer-text">Selesaikan pembayaran dalam:</div>
+              <div class="timer-display" id="paymentTimer">23:59:59</div>
+            </div>
+            
+            <div class="payment-actions">
+              <button class="btn btn-primary" id="confirmPayment">Saya Sudah Bayar</button>
+              <button class="btn btn-ghost" id="copyPaymentInfo">Salin Info Pembayaran</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 5: Bukti Pembayaran -->
+      <div class="payment-step" id="step-receipt">
+        <div class="step-header">
+          <div class="step-number">✓</div>
+          <h3>Pembayaran Berhasil</h3>
+        </div>
+
+        <div class="receipt-container">
+          <div class="receipt">
+            <div class="receipt-header">
+              <div class="success-icon">✓</div>
+              <h3>Pembayaran Berhasil!</h3>
+              <p>Masa aktif internet Anda telah diperpanjang</p>
+            </div>
+            
+            <div class="receipt-details">
+              <div class="receipt-item">
+                <span>ID Transaksi:</span>
+                <span id="transactionId">-</span>
+              </div>
+              <div class="receipt-item">
+                <span>ID Pelanggan:</span>
+                <span id="receiptCustomerId">-</span>
+              </div>
+              <div class="receipt-item">
+                <span>Paket:</span>
+                <span id="receiptPackage">-</span>
+              </div>
+              <div class="receipt-item">
+                <span>Metode Pembayaran:</span>
+                <span id="receiptPaymentMethod">-</span>
+              </div>
+              <div class="receipt-item">
+                <span>Jumlah:</span>
+                <span id="receiptAmount">-</span>
+              </div>
+              <div class="receipt-item">
+                <span>Tanggal Pembayaran:</span>
+                <span id="receiptDate">-</span>
+              </div>
+              <div class="receipt-item highlight">
+                <span>Masa Aktif Baru:</span>
+                <span id="newActiveUntil">-</span>
+              </div>
+            </div>
+            
+            <div class="receipt-actions">
+              <button class="btn btn-primary" id="downloadReceipt">Unduh Bukti Pembayaran</button>
+              <button class="btn btn-ghost" id="printReceipt">Cetak</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
