@@ -1,0 +1,22 @@
+{
+  "customers": [
+    {
+      "id": "CUST001",
+      "name": "Budi Santoso",
+      "package": "Basic 20 Mbps",
+      "expiresAt": "2025-10-27T09:04:33.188Z"
+    },
+    {
+      "id": "CUST002",
+      "name": "Siti Aminah",
+      "package": "Family 50 Mbps",
+      "expiresAt": "2025-10-20T09:04:33.188Z"
+    },
+    {
+      "id": "CUST003",
+      "name": "Andi Wijaya",
+      "package": "Pro 100 Mbps",
+      "expiresAt": "2025-11-06T09:04:33.188Z"
+    }
+  ]
+}

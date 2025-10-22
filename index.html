@@ -21,6 +21,7 @@
     <ul class="nav-links">
       <li><a href="#home">Home</a></li>
       <li><a href="#paket">Paket</a></li>
+      <li><a href="#pembayaran">Pembayaran</a></li>
       <li><a href="#pemasangan">Pemasangan</a></li>
     </ul>
   </nav>
@@ -84,6 +85,108 @@
         <div class="price">Rp 399.000/bulan</div>
         <button class="btn select-package" data-package="Pro 100 Mbps">Pilih Paket</button>
       </article>
+    </div>
+  </section>
+
+  <!-- Pembayaran -->
+  <section id="pembayaran" class="section payment reveal">
+    <h2>Perpanjang Internet Otomatis</h2>
+    <p class="subtitle">Masukkan ID pelanggan Anda, pilih metode, bayar, dan langsung aktif 1 bulan</p>
+
+    <div class="payment-card card">
+      <div class="step">
+        <h3 class="step-title">1. Verifikasi ID Pelanggan</h3>
+        <div class="verify-grid">
+          <input id="customerIdInput" class="input" type="text" placeholder="Contoh: CUST001" autocomplete="off">
+          <button id="checkCustomerBtn" class="btn btn-primary">Cek Status</button>
+        </div>
+        <div id="customerInfo" class="customer-info" hidden>
+          <div class="info-row">
+            <div>
+              <div class="label">Nama</div>
+              <div class="value" id="custName">-</div>
+            </div>
+            <div>
+              <div class="label">Paket</div>
+              <div class="value" id="custPackage">-</div>
+            </div>
+            <div>
+              <div class="label">Masa Aktif</div>
+              <div class="value" id="custExpiry">-</div>
+            </div>
+            <div>
+              <div class="label">Status</div>
+              <div class="value"><span id="custStatus" class="badge">-</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="step">
+        <h3 class="step-title">2. Pilih Metode Pembayaran</h3>
+        <div class="method-tabs">
+          <button class="tab active" data-tab="bank">Transfer Bank</button>
+          <button class="tab" data-tab="ewallet">E-Wallet</button>
+        </div>
+        <div class="method-panels">
+          <div id="panel-bank" class="panel active">
+            <p class="muted">Pembayaran via Virtual Account (BCA/BNI/BRI/Mandiri)</p>
+          </div>
+          <div id="panel-ewallet" class="panel">
+            <div class="ewallet-options">
+              <label class="chip"><input type="radio" name="ewallet" value="ovo" checked> <span>OVO</span></label>
+              <label class="chip"><input type="radio" name="ewallet" value="gopay"> <span>GoPay</span></label>
+              <label class="chip"><input type="radio" name="ewallet" value="shopeepay"> <span>ShopeePay</span></label>
+            </div>
+          </div>
+        </div>
+        <button id="createPaymentBtn" class="btn btn-primary" disabled>Buat Pembayaran</button>
+      </div>
+
+      <div id="paymentInstructions" class="instructions" hidden>
+        <div class="divider"></div>
+        <h3 class="step-title">3. Instruksi Pembayaran</h3>
+        <div id="instructionsContent"></div>
+        <div class="actions-row">
+          <button id="confirmPaymentBtn" class="btn btn-primary">Saya Sudah Bayar</button>
+        </div>
+      </div>
+
+      <div id="receiptSection" class="receipt" hidden>
+        <div class="divider"></div>
+        <h3 class="step-title">4. Bukti Pembayaran</h3>
+        <div id="receiptCard" class="receipt-card">
+          <div class="receipt-header">
+            <img src="logo_perusahaan2-removebg-preview.png" alt="Logo" class="receipt-logo">
+            <div>
+              <div class="receipt-brand">SpaceNet WiFi</div>
+              <div class="receipt-sub">Payment Receipt</div>
+            </div>
+          </div>
+          <div class="receipt-body">
+            <div class="kv"><span>No. Transaksi</span><strong id="rcptPaymentId">-</strong></div>
+            <div class="kv"><span>ID Pelanggan</span><strong id="rcptCustomerId">-</strong></div>
+            <div class="kv"><span>Nama</span><strong id="rcptCustomerName">-</strong></div>
+            <div class="kv"><span>Paket</span><strong id="rcptPackage">-</strong></div>
+            <div class="kv"><span>Metode</span><strong id="rcptMethod">-</strong></div>
+            <div class="kv"><span>Jumlah</span><strong id="rcptAmount">-</strong></div>
+            <div class="kv"><span>Tanggal Bayar</span><strong id="rcptPaidAt">-</strong></div>
+            <div class="kv"><span>Masa Aktif Baru</span><strong id="rcptNewExpiry">-</strong></div>
+            <div class="kv" id="rcptExtraRow" hidden><span id="rcptExtraLabel">-</span><strong id="rcptExtraValue">-</strong></div>
+            <div class="qr-wrap">
+              <img id="rcptQr" alt="QR Receipt" />
+              <div class="qr-caption">Pindai untuk verifikasi bukti</div>
+            </div>
+          </div>
+        </div>
+        <div class="actions-row">
+          <button id="printReceiptBtn" class="btn btn-ghost">Cetak / Unduh PDF</button>
+          <a id="downloadJsonLink" class="btn btn-ghost" download>Unduh Bukti (JSON)</a>
+          <a id="downloadQrLink" class="btn btn-ghost" target="_blank">Unduh QR</a>
+        </div>
+      </div>
     </div>
   </section>
 
